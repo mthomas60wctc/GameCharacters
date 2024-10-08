@@ -1,0 +1,72 @@
+[
+    {
+        "ID": 1,
+        "Name": "Ryu",
+        "Description": "a Japanese martial artist",
+        "Moves": [
+            "Shoryuken",
+            "Hadoken"
+        ]
+    },
+    {
+        "ID": 2,
+        "Name": "E. Honda",
+        "Description": "a sumo wrestler from Japan",
+        "Moves": [
+            "Hundred hand Slap",
+            "Sumo headbutt"
+        ]
+    },
+    {
+        "ID": 3,
+        "Name": "Blanka",
+        "Description": "a beast-like mutant from Brazil",
+        "Moves": [
+            "Electric Thunder",
+            "Rolling Cannon"
+        ]
+    },
+    {
+        "ID": 4,
+        "Name": "Guile",
+        "Description": "a former United States Air Force special forces operative",
+        "Moves": [
+            "Sonic Boom"
+        ]
+    },
+    {
+        "ID": 5,
+        "Name": "Ken",
+        "Description": "Ryu's best friend, greatest rival and former training partner, from the United States",
+        "Moves": [
+            "Hadoken"
+        ]
+    },
+    {
+        "ID": 6,
+        "Name": "Chun-Li",
+        "Description": "a Chinese martial artist who works as an Interpol officer",
+        "Moves": [
+            "Hyakuretsu Kyaku",
+            "Kikoken"
+        ]
+    },
+    {
+        "ID": 7,
+        "Name": "Zangief",
+        "Description": "a professional wrestler and sambo fighter from the Soviet Union",
+        "Moves": [
+            "Spinning Piledrive"
+        ]
+    },
+    {
+        "ID": 8,
+        "Name": "Dhalsim",
+        "Description": "a fire-breathing yoga master from India",
+        "Moves": [
+            "Yoga Fire",
+            "Yoga Flame",
+            "Yoga Teleport"
+        ]
+    }
+]
