@@ -1,0 +1,254 @@
+[
+    {
+        "ID": 1,
+        "Species": "Kong",
+        "Name": "Donkey Kong",
+        "Description": "King of the jungle"
+    },
+    {
+        "ID": 2,
+        "Species": "Human",
+        "Name": "Mario",
+        "Description": "Hero of the Mushroom Kingdom"
+    },
+    {
+        "ID": 3,
+        "Species": "Human",
+        "Name": "Pauline",
+        "Description": "Damsel in distress"
+    },
+    {
+        "ID": 4,
+        "Species": "Human",
+        "Name": "Stanley",
+        "Description": "Exterminator"
+    },
+    {
+        "ID": 5,
+        "Species": "Kong",
+        "Name": "Cranky Kong",
+        "Description": "Grumpy elderly gorilla"
+    },
+    {
+        "ID": 6,
+        "Species": "Kong",
+        "Name": "Donkey Kong Jr.",
+        "Description": "Son of Donkey Kong Sr."
+    },
+    {
+        "ID": 7,
+        "Species": "Kong",
+        "Name": "Diddy Kong",
+        "Description": "Donkey Kong's trusted friend"
+    },
+    {
+        "ID": 8,
+        "Species": "Kong",
+        "Name": "Wrinkly Kong",
+        "Description": "Wife of Cranky Kong"
+    },
+    {
+        "ID": 9,
+        "Species": "Kong",
+        "Name": "Dixie Kong",
+        "Description": "Diddy Kong's partner"
+    },
+    {
+        "ID": 10,
+        "Species": "Kong",
+        "Name": "Kiddy Kong",
+        "Description": "Dixie's 'little cousin' and Chunky Kong's younger brother"
+    },
+    {
+        "ID": 11,
+        "Species": "Kong",
+        "Name": "Tiny Kong",
+        "Description": "Dixie Kong's younger sister and is a cousin to Chunky Kong and Kiddy Kong"
+    },
+    {
+        "ID": 12,
+        "Species": "Kong",
+        "Name": "Chunky Kong",
+        "Description": "Older brother of Kiddy Kong and cousin of Dixie Kong and Tiny Kong"
+    },
+    {
+        "ID": 13,
+        "Species": "Kong",
+        "Name": "Candy Kong",
+        "Description": "Donkey Kong's girlfriend"
+    },
+    {
+        "ID": 14,
+        "Species": "Kong",
+        "Name": "Funky Kong",
+        "Description": "Cool surfer and mechanic"
+    },
+    {
+        "ID": 15,
+        "Species": "Kong",
+        "Name": "Swanky Kong",
+        "Description": "Game show host and entrepreneur"
+    },
+    {
+        "ID": 16,
+        "Species": "Kong",
+        "Name": "Manky Kong",
+        "Description": "Distant cousin to the Kong family"
+    },
+    {
+        "ID": 17,
+        "Species": "Kong",
+        "Name": "Ghastly King",
+        "Description": "Head of the Fruit Kingdom Kongs"
+    },
+    {
+        "ID": 18,
+        "Species": "Kong",
+        "Name": "Dread Kong",
+        "Description": "Ruler of the Banana Kingdom"
+    },
+    {
+        "ID": 19,
+        "Species": "Kong",
+        "Name": "Karate Kong",
+        "Description": "Ruler of the Pineapple Kingdom"
+    },
+    {
+        "ID": 20,
+        "Species": "Kong",
+        "Name": "Ninja Kong",
+        "Description": "Ruler of the Durian Kingdom"
+    },
+    {
+        "ID": 21,
+        "Species": "Kong",
+        "Name": "Sumo Kong",
+        "Description": "Ruler of the Star Fruit Kingdom"
+    },
+    {
+        "ID": 22,
+        "Species": "Kremling",
+        "Name": "King K. Rool",
+        "Description": "Archnemesis of Donkey Kong and Diddy Kong and the leader of the Kremlings"
+    },
+    {
+        "ID": 23,
+        "Species": "Kong",
+        "Name": "Lanky Kong",
+        "Description": "Distant cousin to the Kong family"
+    },
+    {
+        "ID": 24,
+        "Species": "Kremling",
+        "Name": "Klubba",
+        "Description": "Guards the entrance to the Lost World"
+    },
+    {
+        "ID": 25,
+        "Species": "Fairy",
+        "Name": "Banana Fairy Queen",
+        "Description": "Ruler of the banana fairies"
+    },
+    {
+        "ID": 26,
+        "Species": "Walrus",
+        "Name": "Lord Fredrik",
+        "Description": "Uses his enchanted blowing horn to throw the entire island into a state of perpetual winter"
+    },
+    {
+        "ID": 27,
+        "Species": "Swordfish",
+        "Name": "Enguarde the Swordfish",
+        "Description": "Animal Buddy owned by the Kongs"
+    },
+    {
+        "ID": 28,
+        "Species": "Kremling",
+        "Name": "Kalypso",
+        "Description": "Tiny Kong's rival"
+    },
+    {
+        "ID": 29,
+        "Species": "Cutlass",
+        "Name": "Kleever",
+        "Description": "Living cutlass encountered at the end of Crocodile Cauldron"
+    },
+    {
+        "ID": 30,
+        "Species": "Kremling",
+        "Name": "Kudgel",
+        "Description": "Brother of Klubba"
+    },
+    {
+        "ID": 31,
+        "Species": "Parrot",
+        "Name": "Squawks the Parrot",
+        "Description": "Animal Buddy"
+    },
+    {
+        "ID": 32,
+        "Species": "Walrus",
+        "Name": "Bluey the Walrus",
+        "Description": "Guardian of Snowflake Mountain"
+    },
+    {
+        "ID": 33,
+        "Species": "OctopusDiddy Kong Racing",
+        "Name": "Bubbler the Octopus",
+        "Description": "Boss of Sherbet Island"
+    },
+    {
+        "ID": 34,
+        "Species": "Kremling",
+        "Name": "K. Lumsy",
+        "Description": "King K. Kool's younger brother"
+    },
+    {
+        "ID": 35,
+        "Species": "Weasel",
+        "Name": "Snide",
+        "Description": "King K. Rool's chief technician"
+    },
+    {
+        "ID": 36,
+        "Species": "Spider",
+        "Name": "Squitter the Spider",
+        "Description": "Large, friendly spider"
+    },
+    {
+        "ID": 37,
+        "Species": "Ostrich",
+        "Name": "Expresso the Ostrich",
+        "Description": "Animal Buddy"
+    },
+    {
+        "ID": 38,
+        "Species": "Hippopotamus",
+        "Name": "Scoff",
+        "Description": "Giant blue hippopotamus"
+    },
+    {
+        "ID": 39,
+        "Species": "Kremling",
+        "Name": "Kass",
+        "Description": "Rival Dixie Kong"
+    },
+    {
+        "ID": 40,
+        "Species": "Kremling",
+        "Name": "Klump",
+        "Description": "2nd in command of the Kremling Krew"
+    },
+    {
+        "ID": 41,
+        "Species": "Robot",
+        "Name": "Mad Jack",
+        "Description": "Boss of Frantic Factory"
+    },
+    {
+        "ID": 42,
+        "Species": "Tiki",
+        "Name": "Krazy Kalimba",
+        "Description": "Leading member of the Tiki Tak Tribe"
+    }
+]
