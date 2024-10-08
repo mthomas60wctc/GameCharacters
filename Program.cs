@@ -61,6 +61,10 @@ do
             else
             {
                 logger.Info($"Character ID {ID} found");
+                marios.Remove(character);
+                // serialize list<marioCharacter> into json file
+                File.WriteAllText(marioFileName, JsonSerializer.Serialize(marios));
+                logger.Info($"Character ID {ID} removed");
             }
         }
         else
@@ -81,7 +85,7 @@ do
 logger.Info("Program ended");
 
 
-static voID InputCharacter(Character character)
+static void InputCharacter(Character character)
 {
     Type type = character.GetType();
     PropertyInfo[] properties = type.GetProperties();
