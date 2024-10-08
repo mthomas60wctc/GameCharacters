@@ -3,6 +3,6 @@ public abstract class Character{
     public string Name { get; set; } = "";
     public string Description { get; set; } = "";
     public virtual string Display(){
-        return $"Id: {ID}\nName: {Name}\nDescription: {Description}";
+        return $"Id: {ID}\nName: {Name}\nDescription: {Description}\n";
     }
 }
