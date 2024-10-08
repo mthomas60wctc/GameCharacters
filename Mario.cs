@@ -3,6 +3,6 @@ public class Mario : Character{
 
     public override string Display()
     {
-        return base.Display() + $"Alias: {string.Join(", ", Alias)}";
+        return base.Display() + $"Alias: {string.Join(", ", Alias)}\n";
     }
 }
