@@ -35,7 +35,7 @@ do
     else if (choice == "2")
     {
         // Add Mario Character
-        // Generate unique Id
+        // Generate unique ID
         Mario mario = new()
         {
             ID = marios.Count == 0 ? 1 : marios.Max(c => c.ID) + 1
@@ -50,14 +50,22 @@ do
     else if (choice == "3")
     {
         // Remove Mario Character
-        Console.WriteLine("Enter the Id of the character to remove:");
-        if (UInt32.TryParse(Console.ReadLine(), out UInt32 Id))
+        Console.WriteLine("Enter the ID of the character to remove:");
+        if (UInt32.TryParse(Console.ReadLine(), out UInt32 ID))
         {
-            logger.Info($"Character Id {Id} entered");
+            Mario? character = marios.FirstOrDefault(c => c.ID == ID);
+            if (character == null)
+            {
+                logger.Error($"Character ID {ID} not found");
+            }
+            else
+            {
+                logger.Info($"Character ID {ID} found");
+            }
         }
         else
         {
-            logger.Error("Invalid Id");
+            logger.Error("InvalID ID");
         }
     }
     else if (string.IsNullOrEmpty(choice))
@@ -66,14 +74,14 @@ do
     }
     else
     {
-        logger.Info("Invalid choice");
+        logger.Info("InvalID choice");
     }
 } while (true);
 
 logger.Info("Program ended");
 
 
-static void InputCharacter(Character character)
+static voID InputCharacter(Character character)
 {
     Type type = character.GetType();
     PropertyInfo[] properties = type.GetProperties();
