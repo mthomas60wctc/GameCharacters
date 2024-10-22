@@ -1,6 +1,7 @@
 ﻿using NLog;
 using System.Text.Json;
 using System.Reflection;
+using NLog.LayoutRenderers;
 string path = Directory.GetCurrentDirectory() + "//nlog.config";
 
 // create instance of Logger
@@ -10,11 +11,12 @@ logger.Info("Program started");
 
 // deserialize mario json from file into List<Mario>
 string marioFileName = "mario.json";
-string dkFileName = "mario.json";
-string sfFileName = "mario.json";
+string dkFileName = "dk.json";
+string sfFileName = "sf.json";
 List<MarioCharacter> marios = [];
 List<DonkeyKongCharacter> donkeys = [];
 List<StreetFighterCharacter> streets = [];
+var selectedList = marios;
 // check if file exists`
 if (File.Exists(marioFileName))
 {
@@ -34,15 +36,39 @@ if (File.Exists(sfFileName))
 
 do
 {
+    string? choice = null;
+    string currentUniverse = "";
+    do {
+        // display choices to user
+        Console.WriteLine("1) Mario");
+        Console.WriteLine("2) Donkey Kong");
+        Console.WriteLine("3) Street Fighter");
+
+    }while (choice is null || !(choice == "1" || choice  == "2" || choice == "3"));
+
+    switch (choice){
+        case "1":
+            currentUniverse = "Mario";
+        break;
+        case "2":
+            currentUniverse = "Donkey Kong";
+        break;
+        case "3":
+            currentUniverse = "Street Fighter";
+        break;
+    }
+
+    logger.Info("User choice 1: {Choice}", choice);
+
     // display choices to user
-    Console.WriteLine("1) Display Mario Characters");
-    Console.WriteLine("2) Add Mario Character");
-    Console.WriteLine("3) Remove Mario Character");
+    Console.WriteLine("1) Display " + currentUniverse + "  Characters");
+    Console.WriteLine("2) Add " + currentUniverse + " Character");
+    Console.WriteLine("3) Remove " + currentUniverse + " Character");
     Console.WriteLine("Enter to quit");
 
     // input selection
-    string? choice = Console.ReadLine();
-    logger.Info("User choice: {Choice}", choice);
+    choice = Console.ReadLine();
+    logger.Info("User choice 2: {Choice}", choice);
 
     if (choice == "1")
     {
@@ -56,16 +82,16 @@ do
     {
         // Add Mario Character
         // Generate unique ID
-        MarioCharacter mario = new()
+        MarioCharacter character = new()
         {
             ID = marios.Count == 0 ? 1 : marios.Max(c => c.ID) + 1
         };
         // Input character
-        InputCharacter(mario);
+        InputCharacter(character);
         // Add Character
-        marios.Add(mario);
+        marios.Add(character);
         File.WriteAllText(marioFileName, JsonSerializer.Serialize(marios));
-        logger.Info($"Character added: {mario.Name}");
+        logger.Info($"Character added: {character.Name}");
     }
     else if (choice == "3")
     {
