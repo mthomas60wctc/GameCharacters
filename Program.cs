@@ -38,24 +38,28 @@ do
 {
     string? choice = null;
     string currentUniverse = "";
-    do {
+    do
+    {
         // display choices to user
         Console.WriteLine("1) Mario");
         Console.WriteLine("2) Donkey Kong");
         Console.WriteLine("3) Street Fighter");
 
-    }while (choice is null || !(choice == "1" || choice  == "2" || choice == "3"));
+        choice = Console.ReadLine();
 
-    switch (choice){
+    } while (choice is null || !(choice == "1" || choice == "2" || choice == "3"));
+
+    switch (choice)
+    {
         case "1":
             currentUniverse = "Mario";
-        break;
+            break;
         case "2":
             currentUniverse = "Donkey Kong";
-        break;
+            break;
         case "3":
             currentUniverse = "Street Fighter";
-        break;
+            break;
     }
 
     logger.Info("User choice 1: {Choice}", choice);
@@ -72,50 +76,158 @@ do
 
     if (choice == "1")
     {
-        // Display Mario Characters
-        foreach (var c in marios)
+        if (currentUniverse == "Mario")
         {
-            Console.WriteLine(c.Display());
+            // Display Mario Characters
+            foreach (MarioCharacter c in marios)
+            {
+                Console.WriteLine(c.Display());
+            }
+        }
+        else if (currentUniverse == "Street Fighter")
+        {
+            // Display Mario Characters
+            foreach (DonkeyKongCharacter c in donkeys)
+            {
+                Console.WriteLine(c.Display());
+            }
+        }
+        else if (currentUniverse == "Donkey Kong")
+        {
+            // Display Mario Characters
+            foreach (StreetFighterCharacter c in streets)
+            {
+                Console.WriteLine(c.Display());
+            }
         }
     }
     else if (choice == "2")
     {
-        // Add Mario Character
-        // Generate unique ID
-        MarioCharacter character = new()
+        if (currentUniverse == "Mario")
         {
-            ID = marios.Count == 0 ? 1 : marios.Max(c => c.ID) + 1
-        };
-        // Input character
-        InputCharacter(character);
-        // Add Character
-        marios.Add(character);
-        File.WriteAllText(marioFileName, JsonSerializer.Serialize(marios));
-        logger.Info($"Character added: {character.Name}");
+            // Add Mario Character
+            // Generate unique ID
+            MarioCharacter character = new()
+            {
+                ID = marios.Count == 0 ? 1 : marios.Max(c => c.ID) + 1
+            };
+            // Input character
+            InputCharacter(character);
+            // Add Character
+            marios.Add(character);
+            File.WriteAllText(marioFileName, JsonSerializer.Serialize(marios));
+        logger.Info($"{currentUniverse} Character added: {character.Name}");
+        }
+        else if (currentUniverse == "Street Fighter")
+        {
+            // Add Street Fighter Character
+            // Generate unique ID
+            StreetFighterCharacter character = new()
+            {
+                ID = streets.Count == 0 ? 1 : streets.Max(c => c.ID) + 1
+            };
+            // Input character
+            InputCharacter(character);
+            // Add Character
+            streets.Add(character);
+            File.WriteAllText(sfFileName, JsonSerializer.Serialize(streets));
+        logger.Info($"{currentUniverse} Character added: {character.Name}");
+        }
+        else if (currentUniverse == "Donkey Kong")
+        {
+            // Add Donkey Kong Character
+            // Generate unique ID
+            DonkeyKongCharacter character = new()
+            {
+                ID = donkeys.Count == 0 ? 1 : donkeys.Max(c => c.ID) + 1
+            };
+            // Input character
+            InputCharacter(character);
+            // Add Character
+            donkeys.Add(character);
+            File.WriteAllText(dkFileName, JsonSerializer.Serialize(donkeys));
+        logger.Info($"{currentUniverse} Character added: {character.Name}");
+        }
     }
     else if (choice == "3")
     {
-        // Remove Mario Character
-        Console.WriteLine("Enter the ID of the character to remove:");
-        if (UInt32.TryParse(Console.ReadLine(), out UInt32 ID))
+        if (currentUniverse == "Mario")
         {
-            MarioCharacter? character = marios.FirstOrDefault(c => c.ID == ID);
-            if (character == null)
+            // Remove Mario Character
+            Console.WriteLine("Enter the ID of the character to remove:");
+            if (UInt32.TryParse(Console.ReadLine(), out UInt32 ID))
             {
-                logger.Error($"Character ID {ID} not found");
+                MarioCharacter? character = marios.FirstOrDefault(c => c.ID == ID);
+                if (character == null)
+                {
+                    logger.Error($"{currentUniverse} Character ID {ID} not found");
+                }
+                else
+                {
+                    logger.Info($"{currentUniverse} Character ID {ID} found");
+                    marios.Remove(character);
+                    // serialize list<marioCharacter> into json file
+                    File.WriteAllText(marioFileName, JsonSerializer.Serialize(marios));
+                    logger.Info($"{currentUniverse} Character ID {ID} removed");
+                }
             }
             else
             {
-                logger.Info($"Character ID {ID} found");
-                marios.Remove(character);
-                // serialize list<marioCharacter> into json file
-                File.WriteAllText(marioFileName, JsonSerializer.Serialize(marios));
-                logger.Info($"Character ID {ID} removed");
+                logger.Error("InvalID ID");
             }
+
         }
-        else
+        else if (currentUniverse == "Street Fighter")
         {
-            logger.Error("InvalID ID");
+            // Remove Street Fighter Character
+            Console.WriteLine("Enter the ID of the character to remove:");
+            if (UInt32.TryParse(Console.ReadLine(), out UInt32 ID))
+            {
+                StreetFighterCharacter? character = streets.FirstOrDefault(c => c.ID == ID);
+                if (character == null)
+                {
+                    logger.Error($"{currentUniverse} Character ID {ID} not found");
+                }
+                else
+                {
+                    logger.Info($"{currentUniverse} Character ID {ID} found");
+                    streets.Remove(character);
+                    // serialize list<marioCharacter> into json file
+                    File.WriteAllText(sfFileName, JsonSerializer.Serialize(streets));
+                    logger.Info($"{currentUniverse} Character ID {ID} removed");
+                }
+            }
+            else
+            {
+                logger.Error("InvalID ID");
+            }
+
+        }
+        else if (currentUniverse == "Donkey Kong")
+        {
+            // Remove Donkey Kong Character
+            Console.WriteLine("Enter the ID of the character to remove:");
+            if (UInt32.TryParse(Console.ReadLine(), out UInt32 ID))
+            {
+                DonkeyKongCharacter? character = donkeys.FirstOrDefault(c => c.ID == ID);
+                if (character == null)
+                {
+                    logger.Error($"{currentUniverse} Character ID {ID} not found");
+                }
+                else
+                {
+                    logger.Info($"{currentUniverse} Character ID {ID} found");
+                    donkeys.Remove(character);
+                    // serialize list<marioCharacter> into json file
+                    File.WriteAllText(dkFileName, JsonSerializer.Serialize(donkeys));
+                    logger.Info($"{currentUniverse} Character ID {ID} removed");
+                }
+            }
+            else
+            {
+                logger.Error("InvalID ID");
+            }
+
         }
     }
     else if (string.IsNullOrEmpty(choice))
